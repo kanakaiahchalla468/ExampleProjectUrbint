@@ -5,7 +5,6 @@
 *
 */
 
-
 package com.mypages;
 
 import org.openqa.selenium.By;
@@ -113,10 +112,13 @@ public class base {
             System.out.println("some exception/error occurred while waiting for the element " + title);
         }
     }
-    public boolean VerifyElementChecked(WebElement element)
-    {
-      return element.isSelected();
+
+    public boolean VerifyElementChecked(WebElement element) {
+        return element.isSelected();
     }
 
+    public void clearText(WebElement element) {
+        element.clear();
+    }
 
 }

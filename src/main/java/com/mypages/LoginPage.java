@@ -17,7 +17,8 @@ public class LoginPage extends base {
 
     /**
      *
-     * Intialiaze the constructor with Paramater driver so that driver defined has Life
+     * Intialiaze the constructor with Paramater driver so that driver defined has
+     * Life
      */
     private WebDriver driver;
 
@@ -43,13 +44,12 @@ public class LoginPage extends base {
     private By knowledge = By.xpath("//a[@id='knowledgebase']");
     private By contactUs = By.xpath("//a[@id='contactus']");
 
-    public WebElement getUserRemeberMeCheckBox()
-    {
+    public WebElement getUserRemeberMeCheckBox() {
         return driver.findElement(userRemeberMeCheckBox);
     }
-    public WebElement getLoginLabelMessage()
-    {
-       return driver.findElement(loginLabelMessage);
+
+    public WebElement getLoginLabelMessage() {
+        return driver.findElement(loginLabelMessage);
     }
 
     public WebElement getUserName() {
@@ -79,6 +79,15 @@ public class LoginPage extends base {
     public void LoginCrdentails(String username, String password) {
         getUserName().sendKeys(username);
         getPassword().sendKeys(password);
+        getSignIn().click();
+    }
+
+    public void LoginWithSingleUserName(String username) {
+        getUserName().sendKeys(username);
+        getSignIn().click();
+    }
+    public void LoginWithSinglePassword(String password) {
+        getUserName().sendKeys(password);
         getSignIn().click();
     }
 
@@ -173,21 +182,18 @@ public class LoginPage extends base {
         }
 
     }
-    public void verifyUserRemeberMeCheckBoxisntSelected()
-    {
-        try
-        {
+
+    public void verifyUserRemeberMeCheckBoxisntSelected() {
+        try {
             Assert.assertFalse(VerifyElementChecked(getUserRemeberMeCheckBox()));
             System.out.println("UserRemeberMeCheckBox isnt Selected by default");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("UserRemeberMeCheckBox is Selected by Default" + e.getMessage());
 
         }
     }
-public void verifyTextDisplayedAtRemeberMeCheckBox()
-{
-    verifyMessagePrompted(getLoginLabelMessage(), "Keep me signed in for 14 days");
-}
+
+    public void verifyTextDisplayedAtRemeberMeCheckBox() {
+        verifyMessagePrompted(getLoginLabelMessage(), "Keep me signed in for 14 days");
+    }
 }

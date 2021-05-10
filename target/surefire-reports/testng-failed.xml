@@ -12,9 +12,9 @@
         <methods>
           <include name="tearDown"/>
           <include name="sample"/>
-          <include name="InValidLogin"/>
-          <include name="verifySearchResults"/>
-          <include name="ValidLogin"/>
+          <include name="InValidLogin" invocation-numbers="0"/>
+          <include name="VerifyLoginWithJustPassword" invocation-numbers="0"/>
+          <include name="VerifyLoginWithJustUserName" invocation-numbers="0"/>
         </methods>
       </class> <!-- myTests.baseTestClass -->
     </classes>
