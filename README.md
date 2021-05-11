@@ -13,7 +13,7 @@ commons-io
 Extent Reports
 
 Java Selenium Page Objects
-All Selenium Page Objects Exis in "C:\kanakaiah\Automation\Selenium\PracticeWorkspace\urbintExample\src\main\java\com\mypages"
+All Selenium Page Objects Exis in "src\main\java\com\mypages"
 Page Class name Should reflect the page name.
 
 Page Object without Page Factory.
